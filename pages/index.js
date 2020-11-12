@@ -4,21 +4,30 @@ import Link from 'next/link';
 import Date from '../components/date';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData, getSectionsData } from '../lib/posts';
+import config from '../blogConfig';
 
 export async function getStaticProps() {
 	const allPostsData = getSortedPostsData();
 	const allSectionsData = getSectionsData();
+
+	// Paging information
+	const startIndex = 0;
+	const endIndex = config.postsPerPage;
+	const prevPosts = null;
+	const nextPosts = (endIndex >= allPostsData.length) ? null : 2;
 	
 	return {
 		props: {
-			allPostsData,
-			allSectionsData
+			allPostsData: allPostsData.slice(startIndex, endIndex),
+			allSectionsData,
+			prevPosts,
+			nextPosts
 		}
 	}
 
 };
 
-export default function Home({ allPostsData, allSectionsData }) {
+export default function Home({ allPostsData, allSectionsData, prevPosts, nextPosts }) {
 	return (
 		<Layout home>
 			<Head>
@@ -53,7 +62,7 @@ export default function Home({ allPostsData, allSectionsData }) {
 					<ul className={utilStyles.list}>
 						{allPostsData.map( ({ id, date, title }) => (
 							<li className={utilStyles.listItem} key={id}>
-								<Link href={`/posts/${id}`}>
+								<Link href={`/blog/${id}`}>
 									<a>{title}</a>
 								</Link>
 								<br />
@@ -63,6 +72,16 @@ export default function Home({ allPostsData, allSectionsData }) {
 							</li>
 						))}
 					</ul>
+					{prevPosts !== null && (
+						<Link href={"/blog/pages/" + prevPosts} passHref>
+							<a>« see newer posts</a>
+						</Link>
+					)}
+					{nextPosts !== null && (
+						<Link href={"/blog/pages/" + nextPosts} passHref>
+						<a>see older posts »</a>
+						</Link>
+					)}
 				</section>
 			</div>
 			
