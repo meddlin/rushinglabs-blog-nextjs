@@ -3,12 +3,12 @@ import Layout, { siteTitle } from '../components/layout';
 import Link from 'next/link';
 import Date from '../components/date';
 import utilStyles from '../styles/utils.module.css';
-import { getSortedPostsData, getSectionsData } from '../lib/posts';
+import { getSortedPostsData, getAllCategories } from '../lib/posts';
 import config from '../blogConfig';
 
 export async function getStaticProps() {
 	const allPostsData = getSortedPostsData();
-	const allSectionsData = getSectionsData();
+	const categoriesList = getAllCategories();
 
 	// Paging information
 	const startIndex = 0;
@@ -19,7 +19,7 @@ export async function getStaticProps() {
 	return {
 		props: {
 			allPostsData: allPostsData.slice(startIndex, endIndex),
-			allSectionsData,
+			categoriesList,
 			prevPosts,
 			nextPosts
 		}
@@ -27,7 +27,7 @@ export async function getStaticProps() {
 
 };
 
-export default function Home({ allPostsData, allSectionsData, prevPosts, nextPosts }) {
+export default function Home({ allPostsData, categoriesList, prevPosts, nextPosts }) {
 	return (
 		<Layout home>
 			<Head>
@@ -45,7 +45,7 @@ export default function Home({ allPostsData, allSectionsData, prevPosts, nextPos
 				<section>
 					<h2>Categories</h2>
 					<ul>
-						{allSectionsData.map((section) => {
+						{categoriesList.map((section) => {
 							return (
 								<li key={section}>
 									<Link href={`/categories/${section}`}>
