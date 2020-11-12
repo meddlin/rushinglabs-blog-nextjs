@@ -62,7 +62,7 @@ export default function Home({ allPostsData, allSectionsData, prevPosts, nextPos
 					<ul className={utilStyles.list}>
 						{allPostsData.map( ({ id, date, title }) => (
 							<li className={utilStyles.listItem} key={id}>
-								<Link href={`/posts/${id}`}>
+								<Link href={`/blog/${id}`}>
 									<a>{title}</a>
 								</Link>
 								<br />
@@ -73,12 +73,12 @@ export default function Home({ allPostsData, allSectionsData, prevPosts, nextPos
 						))}
 					</ul>
 					{prevPosts !== null && (
-						<Link href={"/blog/" + prevPosts} passHref>
+						<Link href={"/blog/pages/" + prevPosts} passHref>
 							<a>« see newer posts</a>
 						</Link>
 					)}
 					{nextPosts !== null && (
-						<Link href={"/blog/" + nextPosts} passHref>
+						<Link href={"/blog/pages/" + nextPosts} passHref>
 						<a>see older posts »</a>
 						</Link>
 					)}

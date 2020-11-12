@@ -1,8 +1,8 @@
-import Layout from '../../components/layout';
+import Layout from '../../../components/layout';
 import Link from 'next/link';
-import utilStyles from '../../styles/utils.module.css';
-import { getSortedPostsData } from '../../lib/posts';
-import config from '../../blogConfig';
+import utilStyles from '../../../styles/utils.module.css';
+import { getSortedPostsData } from '../../../lib/posts';
+import config from '../../../blogConfig';
 
 /**
  * Create the props data needed to display a list of posts for any particular page.
@@ -54,7 +54,7 @@ const PostsPage = ({ posts, prevPosts, nextPosts }) => {
                 <ul className={utilStyles.list}>
                     {posts.map( ({ id, date, title }) => (
                         <li className={utilStyles.listItem} key={id}>
-                            <Link href={`/posts/${id}`}>
+                            <Link href={`/blog/${id}`}>
                                 <a>{title}</a>
                             </Link>
                             <br />
@@ -66,12 +66,12 @@ const PostsPage = ({ posts, prevPosts, nextPosts }) => {
                 </ul>
 
                 {prevPosts !== null && (
-                    <Link href={"/blog/" + prevPosts} passHref>
+                    <Link href={"/blog/pages/" + prevPosts} passHref>
                         <a>« see newer posts</a>
                     </Link>
                 )}
                 {nextPosts !== null && (
-                    <Link href={"/blog/" + nextPosts} passHref>
+                    <Link href={"/blog/pages/" + nextPosts} passHref>
                     <a>see older posts »</a>
                     </Link>
                 )}
