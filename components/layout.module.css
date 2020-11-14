@@ -3,12 +3,33 @@
     padding: 0 1rem;
     margin: 3rem auto 6rem;
 }
-  
+
 .header {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: space-between;
+    margin: 0.5em 1em;
+
+    font-weight: 400;
+    font-family: 'Palanquin Dark', sans-serif;
 }
+
+.header > div {
+    margin: 0;
+
+    display: flex;
+}
+
+.navbarLinks {
+    font-family: 'Palanquin', sans-serif;
+}
+.navbarLinks > a {
+    margin: 1em;
+    color: black;
+}
+
+
 
 .headerImage {
     width: 6rem;
