@@ -34,13 +34,6 @@ export default function Home({ allPostsData, categoriesList, prevPosts, nextPost
 				<title>{siteTitle}</title>
 			</Head>
 
-			<section className={utilStyles.headingMd}>
-				<p>
-					(This is a sample website - you’ll be building a site like this on{' '}
-					<a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-				</p>
-			</section>
-
 			<div className={`${utilStyles.horizontal}`}>
 				<section>
 					<h2>Categories</h2>
