@@ -33,28 +33,21 @@ export default function Layout({ children, home }) {
               <h1 className={utilStyles.heading2Xl}>{name}</h1>
 
               <div className={styles.navbarLinks}>
-                <Link href="/categories/cpat">cpat</Link>
                 <Link href="/about">about</Link>
               </div>
                 
             </header>
           ) : (
             <header className={styles.header}>
-              <h2 className={utilStyles.headingLg}>
+              <h1 className={utilStyles.heading2Xl}>
                 <Link href="/">
                   <a className={utilStyles.colorInherit}>{name}</a>
                 </Link>
-              </h2>
+              </h1>
 
-              <Link href="/">
-                <a>
-                  <img
-                    src="/images/profile.jpg"
-                    className={`${styles.headerImage} ${utilStyles.borderCircle}`}
-                    alt={name}
-                  />
-                </a>
-              </Link>
+              <div className={styles.navbarLinks}>
+                <Link href="/about">about</Link>
+              </div>
             </header>
           )}
 

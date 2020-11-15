@@ -35,8 +35,8 @@ export default function Home({ allPostsData, categoriesList, prevPosts, nextPost
 			</Head>
 
 			<div className={`${utilStyles.horizontal}`}>
-				<section>
-					<h2>Categories</h2>
+				<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+					<h2 className={utilStyles.headingLg}>Categories</h2>
 					<ul>
 						{categoriesList.map((section) => {
 							return (
