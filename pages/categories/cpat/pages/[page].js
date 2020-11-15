@@ -49,7 +49,7 @@ export async function getStaticPaths() {
 
 const CpatCategory = ({ posts, prevPosts, nextPosts }) => {
     return (
-        <Layout home>
+        <Layout>
             <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
                 <h2 className={utilStyles.headingLg}>Blog</h2>
                 <ul className={utilStyles.list}>

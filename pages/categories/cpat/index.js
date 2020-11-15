@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Layout from '../../../components/layout';
 import Date from '../../../components/date';
 import { getCategoryPosts } from '../../../lib/posts';
 import utilStyles from '../../../styles/utils.module.css';
@@ -22,8 +23,8 @@ export async function getStaticProps() {
 
 export default function Cpat({ posts, prevPosts, nextPosts }) {
     return (
-        <div>
-            <h1>Category: CPAT</h1>
+        <Layout>
+            <h2>Category: CPAT</h2>
             <ul className={utilStyles.list}>
                 {(posts && posts.length > 0) ? (
                     posts.map( ({ id, date, title }) => (
@@ -49,6 +50,6 @@ export default function Cpat({ posts, prevPosts, nextPosts }) {
                 <a>see older posts »</a>
                 </Link>
             )}
-        </div>
+        </Layout>
     );
 };

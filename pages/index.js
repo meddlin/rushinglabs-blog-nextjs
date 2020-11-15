@@ -34,16 +34,9 @@ export default function Home({ allPostsData, categoriesList, prevPosts, nextPost
 				<title>{siteTitle}</title>
 			</Head>
 
-			<section className={utilStyles.headingMd}>
-				<p>
-					(This is a sample website - you’ll be building a site like this on{' '}
-					<a href="https://nextjs.org/learn">our Next.js tutorial</a>.)
-				</p>
-			</section>
-
 			<div className={`${utilStyles.horizontal}`}>
-				<section>
-					<h2>Categories</h2>
+				<section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.categoriesSection}`}>
+					<h2 className={utilStyles.headingLg}>Categories</h2>
 					<ul>
 						{categoriesList.map((section) => {
 							return (
@@ -57,7 +50,7 @@ export default function Home({ allPostsData, categoriesList, prevPosts, nextPost
 					</ul>
 				</section>
 
-				<section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+				<section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.postsSection}`}>
 					<h2 className={utilStyles.headingLg}>Blog</h2>
 					<ul className={utilStyles.list}>
 						{allPostsData.map( ({ id, date, title }) => (
@@ -72,19 +65,21 @@ export default function Home({ allPostsData, categoriesList, prevPosts, nextPost
 							</li>
 						))}
 					</ul>
-					{prevPosts !== null && (
-						<Link href={"/blog/pages/" + prevPosts} passHref>
-							<a>« see newer posts</a>
-						</Link>
-					)}
-					{nextPosts !== null && (
-						<Link href={"/blog/pages/" + nextPosts} passHref>
-						<a>see older posts »</a>
-						</Link>
-					)}
+
+					<section className={`${utilStyles.centeredButtons}`}>
+						{prevPosts !== null && (
+							<Link href={"/blog/pages/" + prevPosts} passHref>
+								<a>« newer</a>
+							</Link>
+						)}
+						{nextPosts !== null && (
+							<Link href={"/blog/pages/" + nextPosts} passHref>
+							<a>older »</a>
+							</Link>
+						)}
+					</section>
 				</section>
 			</div>
-			
 		</Layout>
 	);
 }

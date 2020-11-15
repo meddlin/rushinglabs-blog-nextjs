@@ -1,7 +1,7 @@
 .heading2Xl {
     font-size: 2.5rem;
     line-height: 1.2;
-    font-weight: 800;
+    font-weight: 700;
     letter-spacing: -0.05rem;
     margin: 1rem 0;
   }
@@ -54,6 +54,7 @@
 
   .horizontal {
     display: flex;
+    justify-content: space-between;
   }
 
   .horizontal > section {
@@ -65,9 +66,16 @@
     margin: 0;
   }
 
-.layoutHeader {
-  margin: 0;
+.categoriesSection {
+  margin-right: 4rem;
+}
 
+.postsSection {
+  min-width: 35rem;
+}
+
+.centeredButtons {
   display: flex;
-  background-color: #999;
+  justify-content: space-between;
+  align-items: center;
 }
