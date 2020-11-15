@@ -54,6 +54,7 @@
 
   .horizontal {
     display: flex;
+    justify-content: space-between;
   }
 
   .horizontal > section {
@@ -64,3 +65,17 @@
     padding: 0;
     margin: 0;
   }
+
+.categoriesSection {
+  margin-right: 4rem;
+}
+
+.postsSection {
+  min-width: 35rem;
+}
+
+.centeredButtons {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

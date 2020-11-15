@@ -35,7 +35,6 @@ export default function Layout({ children, home }) {
               <div className={styles.navbarLinks}>
                 <Link href="/about">about</Link>
               </div>
-                
             </header>
           ) : (
             <header className={styles.header}>
