@@ -5,8 +5,10 @@ import { getCategoryPosts } from '../../../lib/posts';
 import utilStyles from '../../../styles/utils.module.css';
 import config from '../../../blogConfig';
 
+const _section_ = 'security';
+
 export async function getStaticProps() {
-    const posts = getCategoryPosts('cpat');
+    const posts = getCategoryPosts(_section_);
     const startIdx = 0;
     const endIdx = config.postsPerPage;
     const prevPosts = null;
@@ -21,10 +23,10 @@ export async function getStaticProps() {
     }
 };
 
-export default function Cpat({ posts, prevPosts, nextPosts }) {
+export default function SecuritySection({ posts, prevPosts, nextPosts }) {
     return (
         <Layout>
-            <h2>Category: CPAT</h2>
+            <h2>Section: Security</h2>
             <ul className={utilStyles.list}>
                 {(posts && posts.length > 0) ? (
                     posts.map( ({ id, date, title }) => (
@@ -41,12 +43,12 @@ export default function Cpat({ posts, prevPosts, nextPosts }) {
                 ) : ''}
             </ul>
             {prevPosts !== null && (
-                <Link href={"/categories/cpat/pages/" + prevPosts} passHref>
+                <Link href={`/categories/${_section_}/pages/${prevPosts}`} passHref>
                     <a>« see newer posts</a>
                 </Link>
             )}
             {nextPosts !== null && (
-                <Link href={"/categories/cpat/pages/" + nextPosts} passHref>
+                <Link href={`/categories/${_section_}/pages/${nextPosts}`} passHref>
                 <a>see older posts »</a>
                 </Link>
             )}
