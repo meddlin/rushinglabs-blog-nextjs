@@ -51,7 +51,7 @@ export default function Layout({ children, home }) {
           )}
 
         <div className={styles.container}>
-          <main>{children}</main>
+          {children}
         </div>
 
         {!home && (
