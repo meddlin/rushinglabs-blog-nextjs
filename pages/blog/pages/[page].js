@@ -1,3 +1,4 @@
+
 import Layout from '../../../components/layout';
 import Date from '../../../components/date';
 import Link from 'next/link';
@@ -49,56 +50,60 @@ export async function getStaticPaths() {
     }
 };
 
+
+
 const PostsPage = ({ posts, categoriesList, prevPosts, nextPosts }) => {
     return (
-        <Layout home>
-            <div className={`${utilStyles.horizontal}`}>
-                <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.categoriesSection}`}>
-                    <h2 className={utilStyles.headingLg}>Categories</h2>
-                    <ul>
-                        {categoriesList.map((section) => {
-                            return (
-                                <li key={section}>
-                                    <Link href={`/categories/${section}`}>
-                                        {section}
-                                    </Link>
-                                </li>
-                            );
-                        })}
-                    </ul>
-                </section>
-
-                <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.postsSection}`}>
-                    <h2 className={utilStyles.headingLg}>Blog</h2>
-                    <ul className={utilStyles.list}>
-                        {posts.map( ({ id, date, title }) => (
-                            <li className={utilStyles.listItem} key={id}>
-                                <Link href={`/blog/${id}`}>
-                                    <a>{title}</a>
-                                </Link>
-                                <br />
-                                <small className={utilStyles.lightText}>
-                                    <Date dateString={date} />
-                                </small>
-                            </li>
-                        ))}
-                    </ul>
-
-                    <section className={`${utilStyles.centeredButtons}`}>
-                        {prevPosts !== null && (
-                            <Link href={"/blog/pages/" + prevPosts} passHref>
-                                <a>« newer</a>
-                            </Link>
-                        )}
-                        {nextPosts !== null && (
-                            <Link href={"/blog/pages/" + nextPosts} passHref>
-                            <a>older »</a>
-                            </Link>
-                        )}
+        
+            <Layout home>
+                <div className={`${utilStyles.horizontal}`}>
+                    <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.categoriesSection}`}>
+                        <h2 className={utilStyles.headingLg}>Categories</h2>
+                        <ul>
+                            {categoriesList.map((section) => {
+                                return (
+                                    <li key={section}>
+                                        <Link href={`/categories/${section}`}>
+                                            {section}
+                                        </Link>
+                                    </li>
+                                );
+                            })}
+                        </ul>
                     </section>
-                </section>
-            </div>
-        </Layout>
+
+                    <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.postsSection}`}>
+                        <h2 className={utilStyles.headingLg}>Blog</h2>
+                        <ul className={utilStyles.list}>
+                            {posts.map( ({ id, date, title }) => (
+                                <li className={utilStyles.listItem} key={id}>
+                                    <Link href={`/blog/${id}`}>
+                                        <a>{title}</a>
+                                    </Link>
+                                    <br />
+                                    <small className={utilStyles.lightText}>
+                                        <Date dateString={date} />
+                                    </small>
+                                </li>
+                            ))}
+                        </ul>
+
+                        <section className={`${utilStyles.centeredButtons}`}>
+                            {prevPosts !== null && (
+                                <Link href={"/blog/pages/" + prevPosts} passHref>
+                                    <a>« newer</a>
+                                </Link>
+                            )}
+                            {nextPosts !== null && (
+                                <Link href={"/blog/pages/" + nextPosts} passHref>
+                                <a>older »</a>
+                                </Link>
+                            )}
+                        </section>
+                    </section>
+                </div>
+            </Layout>
+        
     );
 };
 

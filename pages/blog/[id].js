@@ -22,10 +22,12 @@ export async function getStaticProps({ params }) {
 }
 
 export default function Post({ postData }) {
+
     return (
         <Layout>
             <Head>
                 <title>{postData.title}</title>
+                
             </Head>
             <article>
                 <h1 className={utilStyles.headingX1}>{postData.title}</h1>

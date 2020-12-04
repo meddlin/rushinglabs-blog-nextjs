@@ -10,7 +10,7 @@ tags: 'software'
 
 Alright, so jumping right in...I had a dataset that looked a little something like below. There was an array where each item was essentially a date associated to some data.
 
-So... `{ a date, {some-object} }`.
+So... `{ a date, {some-object} }`
 
 The problem was that some of the dates were duplicated, representing multiple entries for a single day. Basically, I wanted "to group the dataset on the date". This is a trivial problem for SQL, LINQ, or something similar. However, I needed to do this in JavaScript, and didn't have access to underscore.js.
 
@@ -62,7 +62,8 @@ _A full walkthrough of `Array.reduce()` is out of the scope of this article; pla
 
 Watch that second step...it's a doozie. <br />
 This time let's start with the code. We will be putting the following block inside of our iterator function.
-```
+
+```js
 if ( acc.has(curr.date) ) {
 	acc.get(curr.date).push(curr);
 } else {
