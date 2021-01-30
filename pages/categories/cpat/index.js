@@ -27,9 +27,9 @@ export default function Cpat({ posts, prevPosts, nextPosts }) {
             <h2>Category: CPAT</h2>
             <ul className={utilStyles.list}>
                 {(posts && posts.length > 0) ? (
-                    posts.map( ({ id, date, title }) => (
+                    posts.map( ({ id, year, date, title }) => (
                         <li className={utilStyles.listItem} key={id}>
-                            <Link href={`/blog/${id}`}>
+                            <Link href={`/blog/${year}/${id}`}>
                                 <a>{title}</a>
                             </Link>
                             <br />

@@ -8,7 +8,7 @@ import config from '../blogConfig';
 
 export async function getStaticProps() {
 	const allPostsData = getSortedPostsData();
-	const categoriesList = getAllCategories();
+	const categoriesList = getAllCategories();	
 
 	// Paging information
 	const startIndex = 0;
