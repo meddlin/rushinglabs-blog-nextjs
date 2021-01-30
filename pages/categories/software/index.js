@@ -26,12 +26,12 @@ export async function getStaticProps() {
 export default function SecuritySection({ posts, prevPosts, nextPosts }) {
     return (
         <Layout>
-            <h2>Section: Security</h2>
+            <h2>Section: {_section_.charAt(0).toUpperCase() + _section_.slice(1)}</h2>
             <ul className={utilStyles.list}>
                 {(posts && posts.length > 0) ? (
-                    posts.map( ({ id, date, title }) => (
+                    posts.map( ({ id, year, date, title }) => (
                         <li className={utilStyles.listItem} key={id}>
-                            <Link href={`/blog/${id}`}>
+                            <Link href={`/blog/${year}/${id}`}>
                                 <a>{title}</a>
                             </Link>
                             <br />

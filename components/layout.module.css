@@ -3,6 +3,13 @@
     justify-content: center;
     margin: 0 25% 0 25%;
 }
+/*
+* keeps the article content from overflowing the margins
+* (especially when very wide, code snippets are being converted into <pre> blocks in Markdown)
+*/
+.container article {
+    max-width: 100%;
+}
 
 .header {
     display: flex;
