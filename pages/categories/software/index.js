@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Layout from '../../../components/layout';
 import Date from '../../../components/date';
 import { getCategoryPosts } from '../../../lib/posts';
+import { capitalizeFirstLetter } from '../../../lib/text-utils';
 import utilStyles from '../../../styles/utils.module.css';
 import config from '../../../blogConfig';
 
@@ -26,7 +27,7 @@ export async function getStaticProps() {
 export default function SecuritySection({ posts, prevPosts, nextPosts }) {
     return (
         <Layout>
-            <h2>Section: {_section_.charAt(0).toUpperCase() + _section_.slice(1)}</h2>
+            <h2>Section: {capitalizeFirstLetter(_section_)}</h2>
             <ul className={utilStyles.list}>
                 {(posts && posts.length > 0) ? (
                     posts.map( ({ id, year, date, title }) => (

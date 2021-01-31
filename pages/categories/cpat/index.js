@@ -2,8 +2,11 @@ import Link from 'next/link';
 import Layout from '../../../components/layout';
 import Date from '../../../components/date';
 import { getCategoryPosts } from '../../../lib/posts';
+import { allCaps } from '../../../lib/text-utils';
 import utilStyles from '../../../styles/utils.module.css';
 import config from '../../../blogConfig';
+
+const _section_ = 'cpat';
 
 export async function getStaticProps() {
     const posts = getCategoryPosts('cpat');
@@ -24,7 +27,7 @@ export async function getStaticProps() {
 export default function Cpat({ posts, prevPosts, nextPosts }) {
     return (
         <Layout>
-            <h2>Category: CPAT</h2>
+            <h2>Category: {allCaps(_section_)}</h2>
             <ul className={utilStyles.list}>
                 {(posts && posts.length > 0) ? (
                     posts.map( ({ id, year, date, title }) => (
