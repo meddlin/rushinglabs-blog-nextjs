@@ -4,7 +4,12 @@
     font-weight: 700;
     letter-spacing: -0.05rem;
     margin: 1rem 0;
+}
+@media (min-width: 400px), screen and (orientation: portrait) {
+  .heading2Xl {
+      font-size: 2rem;
   }
+}
   
   .headingXl {
     font-size: 2rem;
