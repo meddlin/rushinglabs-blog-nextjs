@@ -55,9 +55,9 @@ const CpatCategory = ({ posts, prevPosts, nextPosts }) => {
             <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
                 <h2 className={utilStyles.headingLg}>Blog</h2>
                 <ul className={utilStyles.list}>
-                    {posts.map( ({ id, date, title }) => (
+                    {posts.map( ({ id, year, date, title }) => (
                         <li className={utilStyles.listItem} key={id}>
-                            <Link href={`/blog/${id}`}>
+                            <Link href={`/blog/${year}/${id}`}>
                                 <a>{title}</a>
                             </Link>
                             <br />
