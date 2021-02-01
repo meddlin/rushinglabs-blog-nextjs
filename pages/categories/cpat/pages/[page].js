@@ -4,6 +4,8 @@ import utilStyles from '../../../../styles/utils.module.css';
 import { getCategoryPosts } from '../../../../lib/posts';
 import config from '../../../../blogConfig';
 
+const _section_ = 'cpat';
+
 /**
  * 
  * @param {*} param0 
@@ -17,7 +19,7 @@ export async function getStaticProps({ params }) {
 
     const prevPosts = (pageIndex > 0) ? pageIndex : null;
     const nextPosts = (endIndex >= posts.length) ? null : (pageIndex + 2);
-    const numPages  = (config.postsPerPage % getCategoryPosts('cpat').length) + 1;
+    const numPages  = (config.postsPerPage % getCategoryPosts(_section_).length) + 1;
 
     return {
         props: {
@@ -34,7 +36,7 @@ export async function getStaticProps({ params }) {
  * 
  */
 export async function getStaticPaths() {
-    const numPages = (config.postsPerPage % getCategoryPosts('cpat').length) + 1;
+    const numPages = (config.postsPerPage % getCategoryPosts(_section_).length) + 1;
 
     return {
         paths: [...Array(numPages)].map( (v, i) => {
