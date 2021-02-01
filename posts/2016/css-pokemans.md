@@ -2,7 +2,6 @@
 path: "/blog/css-pokemans"
 date: "2016-12-13"
 title: "CSS Pokemans"
-section: ''
 ---
 
 Typically I'm not crazy about the "pure CSS solutions" in web development, but this is a very cool treat found on HN this morning. It's an animated Pokémon implemented in CSS. Sadly, it appears to only work properly in Webkit so Chrome (or maybe Safari?) is suggested to view it working properly.
