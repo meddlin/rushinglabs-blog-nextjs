@@ -40,13 +40,16 @@ export async function getStaticPaths() {
     const postsPerPage = config.postsPerPage;
     const postsAvailable = getCategoryPosts(_section_).length;
 
-    if (postsPerPage == postsAvailable) {
+    if (postsPerPage >= postsAvailable) {
         numPages = 1;
-    } else if (postsPerPage <= postsAvailable) {
-        if (postsAvailable % postsPerPage != 0)
+    } else if (postsPerPage < postsAvailable) {
+    
+        if (postsAvailable % postsPerPage != 0) {
             numPages = (Math.trunc(postsAvailable / postsPerPage)) + 1;
-        else
+        } else {
             numPages = Math.trunc(postsAvailable / postsPerPage);
+        }
+    
     }
 
     return {
