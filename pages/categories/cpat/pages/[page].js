@@ -2,6 +2,7 @@ import Layout from '../../../../components/layout';
 import Link from 'next/link';
 import utilStyles from '../../../../styles/utils.module.css';
 import { getCategoryPosts } from '../../../../lib/posts';
+import { calculateSectionPagingInfo } from '../../../../lib/paging';
 import config from '../../../../blogConfig';
 
 const _section_ = 'cpat';
@@ -36,24 +37,10 @@ export async function getStaticProps({ params }) {
  * 
  */
 export async function getStaticPaths() {
-    let numPages = 0;
-    const postsPerPage = config.postsPerPage;
-    const postsAvailable = getCategoryPosts(_section_).length;
-
-    if (postsPerPage >= postsAvailable) {
-        numPages = 1;
-    } else if (postsPerPage < postsAvailable) {
-    
-        if (postsAvailable % postsPerPage != 0) {
-            numPages = (Math.trunc(postsAvailable / postsPerPage)) + 1;
-        } else {
-            numPages = Math.trunc(postsAvailable / postsPerPage);
-        }
-    
-    }
+    const pagingInfo = calculateSectionPagingInfo(_section_);
 
     return {
-        paths: [...Array(numPages)].map( (v, i) => {
+        paths: [...Array(pagingInfo)].map( (v, i) => {
             return {
                 params: { page: (i + 1).toString() }
             }
