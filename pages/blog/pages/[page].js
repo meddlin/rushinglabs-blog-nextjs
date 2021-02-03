@@ -4,6 +4,7 @@ import Date from '../../../components/date';
 import Link from 'next/link';
 import utilStyles from '../../../styles/utils.module.css';
 import { getSortedPostsData, getAllCategories } from '../../../lib/posts';
+import { calculateBlogPagingInfo } from '../../../lib/paging';
 import config from '../../../blogConfig';
 
 /**
@@ -38,7 +39,7 @@ export async function getStaticProps({ params }) {
  * Generate the static paths for pages based on how many posts we have
  */
 export async function getStaticPaths() {
-    const numPages = (config.postsPerPage % getSortedPostsData().length) + 1;
+    const numPages = calculateBlogPagingInfo();
 
     return {
         paths: [...Array(numPages)].map( (v, i) => {

@@ -2,6 +2,7 @@ import Layout from '../../../../components/layout';
 import Link from 'next/link';
 import utilStyles from '../../../../styles/utils.module.css';
 import { getCategoryPosts } from '../../../../lib/posts';
+import { calculateSectionPagingInfo } from '../../../../lib/paging';
 import config from '../../../../blogConfig';
 
 const _section_ = 'security';
@@ -36,10 +37,10 @@ export async function getStaticProps({ params }) {
  * 
  */
 export async function getStaticPaths() {
-    const numPages = (config.postsPerPage % getCategoryPosts(_section_).length) + 1;
+    const pagingInfo = calculateSectionPagingInfo(_section_);
 
     return {
-        paths: [...Array(numPages)].map( (v, i) => {
+        paths: [...Array(pagingInfo)].map( (v, i) => {
             return {
                 params: { page: (i + 1).toString() }
             }
@@ -55,9 +56,9 @@ const CpatCategory = ({ posts, prevPosts, nextPosts }) => {
             <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
                 <h2 className={utilStyles.headingLg}>Blog</h2>
                 <ul className={utilStyles.list}>
-                    {posts.map( ({ id, date, title }) => (
+                    {posts.map( ({ id, year, date, title }) => (
                         <li className={utilStyles.listItem} key={id}>
-                            <Link href={`/blog/${id}`}>
+                            <Link href={`/blog/${year}/${id}`}>
                                 <a>{title}</a>
                             </Link>
                             <br />

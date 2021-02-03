@@ -44,12 +44,12 @@ export default function Cpat({ posts, prevPosts, nextPosts }) {
                 ) : ''}
             </ul>
             {prevPosts !== null && (
-                <Link href={"/categories/cpat/pages/" + prevPosts} passHref>
+                <Link href={`/categories/${_section_}/pages/` + prevPosts} passHref>
                     <a>« see newer posts</a>
                 </Link>
             )}
             {nextPosts !== null && (
-                <Link href={"/categories/cpat/pages/" + nextPosts} passHref>
+                <Link href={`/categories/${_section_}/pages/` + nextPosts} passHref>
                 <a>see older posts »</a>
                 </Link>
             )}
