@@ -6,7 +6,8 @@
     "dev": "next dev",
     "debug": "cross-env NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
-    "start": "next start -p $PORT"
+    "start": "next start -p $PORT",
+    "export": "next export"
   },
   "dependencies": {
     "cross-env": "^7.0.3",

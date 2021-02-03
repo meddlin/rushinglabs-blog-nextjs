@@ -36,7 +36,18 @@ export async function getStaticProps({ params }) {
  * 
  */
 export async function getStaticPaths() {
-    const numPages = (config.postsPerPage % getCategoryPosts(_section_).length) + 1;
+    let numPages = 0;
+    const postsPerPage = config.postsPerPage;
+    const postsAvailable = getCategoryPosts(_section_).length;
+
+    if (postsPerPage == postsAvailable) {
+        numPages = 1;
+    } else if (postsPerPage <= postsAvailable) {
+        if (postsAvailable % postsPerPage != 0)
+            numPages = (Math.trunc(postsAvailable / postsPerPage)) + 1;
+        else
+            numPages = Math.trunc(postsAvailable / postsPerPage);
+    }
 
     return {
         paths: [...Array(numPages)].map( (v, i) => {
