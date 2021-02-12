@@ -1,0 +1,16 @@
+
+.content {
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+}
+
+.content li {
+    display: flex;
+    flex-direction: row;
+}
+.content li > a {
+    margin-left: 1em;
+}
