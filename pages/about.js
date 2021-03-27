@@ -1,11 +1,13 @@
+import Layout from '../components/layout';
+
 function About() {
     return (
-        <div>
+        <Layout home>
             <h1>About</h1>
             <p>
                 This is the about page. "about" info goes here.
             </p>
-        </div>
+        </Layout>
     );
 };
 
