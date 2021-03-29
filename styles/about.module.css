@@ -4,3 +4,24 @@
 
     width: 60%;
 }
+
+/* If screen is 400px or wider */
+@media (min-width: 400px), screen and (orientation: portrait) {
+    .mainContent {
+        width: 90%;
+    }
+}
+
+/* If screen is 700px or wider */
+@media (min-width: 700px), screen and (orientation: portrait) {
+    .mainContent {
+        width: 80%;
+    }
+}
+
+/* If screen is 1000px or wider */
+@media (min-width: 1000px), screen and (orientation: portrait) {
+    .mainContent {
+        width: 70%;
+    }
+}
