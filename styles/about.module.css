@@ -25,3 +25,17 @@
         width: 70%;
     }
 }
+
+/* If screen is 1000px or wider */
+@media (min-width: 1300px), screen and (orientation: portrait) {
+    .mainContent {
+        width: 50%;
+    }
+}
+
+/* If screen is 1920px or wider */
+@media (min-width: 1920px), screen and (orientation: portrait) {
+    .mainContent {
+        width: 30%;
+    }
+}
