@@ -1,4 +1,5 @@
 import Layout from '../components/layout';
+import SocialsHorizontal from '../components/socials-horizontal';
 import styles from '../styles/about.module.css';
 
 function About() {
@@ -16,6 +17,9 @@ function About() {
                     I blog about code and some of the ideas I run across in work and projects. I also
                     post tutorials and tech videos to YouTube, and try to share as much of everything 
                     on GitHub as I can.
+                </p>
+                <p>
+                    <SocialsHorizontal />
                 </p>
             </div>
         </Layout>
