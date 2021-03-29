@@ -5,6 +5,7 @@ import Date from '../components/date';
 import utilStyles from '../styles/utils.module.css';
 import { getSortedPostsData, getAllCategories } from '../lib/posts';
 import config from '../blogConfig';
+import CategoryListing from '../components/category-listing';
 
 export async function getStaticProps() {
 	const allPostsData = getSortedPostsData();
@@ -36,22 +37,11 @@ export default function Home({ allPostsData, categoriesList, prevPosts, nextPost
 
 			<div className={`${utilStyles.horizontal}`}>
 				<section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.categoriesSection}`}>
-					<h2 className={utilStyles.headingLg}>Categories</h2>
-					<ul>
-						{categoriesList.map((section) => {
-							return (
-								<li key={section}>
-									<Link href={`/categories/${section}`}>
-										{section}
-									</Link>
-								</li>
-							);
-						})}
-					</ul>
+					<b>Categories</b>
+					<CategoryListing categories={categoriesList} />
 				</section>
 
 				<section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.postsSection}`}>
-					<h2 className={utilStyles.headingLg}>Blog</h2>
 					<ul className={utilStyles.list}>
 						{allPostsData.map( ({ id, date, title }) => (
 							<li className={utilStyles.listItem} key={id}>
