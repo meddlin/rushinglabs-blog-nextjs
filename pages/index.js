@@ -36,7 +36,7 @@ export default function Home({ allPostsData, categoriesList, prevPosts, nextPost
 
 			<div className={`${utilStyles.horizontal}`}>
 				<section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.categoriesSection}`}>
-					<h2 className={utilStyles.headingLg}>Categories</h2>
+					<b>Categories</b>
 					<ul>
 						{categoriesList.map((section) => {
 							return (
@@ -51,7 +51,6 @@ export default function Home({ allPostsData, categoriesList, prevPosts, nextPost
 				</section>
 
 				<section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.postsSection}`}>
-					<h2 className={utilStyles.headingLg}>Blog</h2>
 					<ul className={utilStyles.list}>
 						{allPostsData.map( ({ id, date, title }) => (
 							<li className={utilStyles.listItem} key={id}>
