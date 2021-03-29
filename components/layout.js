@@ -28,39 +28,21 @@ export default function Layout({ children, home }) {
           <link href="https://fonts.googleapis.com/css2?family=Palanquin+Dark:wght@400;700&family=Palanquin:wght@100;300&display=swap" rel="stylesheet"></link>
         </Head>
 
-          {home ? (
-            <header className={styles.header}>
-              <h1 className={utilStyles.heading2Xl}>
-                <Link href="/">
-                  <a className={utilStyles.colorInherit}>{name}</a>
-                </Link>
-              </h1>
+        <header className={styles.header}>
+          <h1 className={utilStyles.heading2Xl}>
+            <Link href="/">
+              <a className={utilStyles.colorInherit}>{name}</a>
+            </Link>
+          </h1>
 
-              <div className={styles.navbarLinks}>
-                <h2>
-                  <Link href="/about">
-                    <a className={utilStyles.colorInherit}>About</a>
-                  </Link>
-                </h2>
-              </div>
-            </header>
-          ) : (
-            <header className={styles.header}>
-              <h1 className={utilStyles.heading2Xl}>
-                <Link href="/">
-                  <a className={utilStyles.colorInherit}>{name}</a>
-                </Link>
-              </h1>
-
-              <div className={styles.navbarLinks}>
-                <h2>
-                  <Link href="/about">
-                    <a className={utilStyles.colorInherit}>About</a>
-                  </Link>
-                </h2>
-              </div>
-            </header>
-          )}
+          <div className={styles.navbarLinks}>
+            <h2>
+              <Link href="/about">
+                <a className={utilStyles.colorInherit}>About</a>
+              </Link>
+            </h2>
+          </div>
+        </header>
 
         <div className={styles.container}>
           {children}

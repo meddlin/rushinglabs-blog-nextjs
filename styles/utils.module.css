@@ -5,10 +5,15 @@
     letter-spacing: -0.05rem;
     margin: 1rem 0;
 }
-@media (min-width: 400px), screen and (orientation: portrait) {
-  .heading2Xl {
-      font-size: 2rem;
-  }
+
+.categoriesSection {
+  font-size: 1rem;
+  margin-right: 10em;
+  margin-top: 3em;
+}
+
+.postsSection {
+  min-width: 35rem;
 }
   
   .headingXl {
@@ -57,6 +62,7 @@
   }
   
 
+
   .horizontal {
     display: flex;
     justify-content: space-between;
@@ -71,18 +77,45 @@
     margin: 0;
   }
 
-.categoriesSection {
-  font-size: 1rem;
-  margin-right: 10em;
-  margin-top: 3em;
-}
-
-.postsSection {
-  min-width: 35rem;
-}
 
 .centeredButtons {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+
+@media (min-width: 400px) and (max-width: 699px), 
+screen and (orientation: portrait) {
+  .heading2Xl {
+      font-size: 1.8rem;
+  }
+
+  .postsSection {
+    min-width: 5rem;
+    font-size: 1.1em;
+  }
+
+  .categoriesSection {
+    display: none;
+  }
+}
+
+/* If screen is 700px or wider */
+@media (min-width: 700px) and (max-width: 1299px),
+    screen and (orientation: portrait) {
+      .heading2Xl {
+        font-size: 1.8rem;
+    }
+  
+    .postsSection {
+      min-width: 5rem;
+      font-size: 1.1em;
+    }
+  
+    .categoriesSection {
+      margin-right: 5em;
+      font-size: 1em;
+      margin-top: 0;
+    }
 }

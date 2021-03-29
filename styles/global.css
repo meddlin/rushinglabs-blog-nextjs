@@ -27,7 +27,7 @@ img {
 }
 
 
-@media (min-width: 400px), screen and (orientation: portrait) {
+@media (min-width: 400px) {
   .remark-highlight {
     font-size: 16px;
   }

@@ -5,37 +5,38 @@
     width: 60%;
 }
 
-/* If screen is 400px or wider */
-@media (min-width: 400px), screen and (orientation: portrait) {
+/* If screen is 1920px or wider */
+@media (min-width: 1920px) {
     .mainContent {
-        width: 90%;
-    }
-}
-
-/* If screen is 700px or wider */
-@media (min-width: 700px), screen and (orientation: portrait) {
-    .mainContent {
-        width: 80%;
+        width: 30%;
     }
 }
 
 /* If screen is 1000px or wider */
-@media (min-width: 1000px), screen and (orientation: portrait) {
-    .mainContent {
-        width: 70%;
-    }
-}
-
-/* If screen is 1000px or wider */
-@media (min-width: 1300px), screen and (orientation: portrait) {
+@media (min-width: 1300px) and (max-width: 1919px) {
     .mainContent {
         width: 50%;
     }
 }
 
-/* If screen is 1920px or wider */
-@media (min-width: 1920px), screen and (orientation: portrait) {
+/* If screen is 700px or wider */
+@media (min-width: 700px) and (max-width: 1299px),
+    screen and (orientation: portrait) {
     .mainContent {
-        width: 30%;
+        width: 80%;
+    }
+}
+
+/* If screen is 400px or wider */
+@media (min-width: 400px) and (max-width: 699px), 
+    screen and (orientation: portrait) {
+    .mainContent {
+        width: 90%;
+    }
+}
+
+@media (max-width: 399px) {
+    .mainContent {
+        width: 100%;
     }
 }
