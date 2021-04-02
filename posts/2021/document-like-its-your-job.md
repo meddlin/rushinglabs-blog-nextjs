@@ -5,7 +5,6 @@ title: "Document Like You Mean It"
 
 _Document like you want to use it--**because you will**_
 
-<br />
 
 Documentation was the first problem jumping out at me on my first software engineering job. There wasn't really a lack of it. However, most of the team docs hadn't been updated in several years. So they were outdated for new hires, and forgotten by people who had memorized the chunks they needed. 
 
@@ -38,8 +37,9 @@ You have to just make notes and know.
 
 ## Dynamic Documentation
 
-Documentation should appear more like creating than just transactional writing. Think of your audience: they're busy, they are frustrated, they feel lost, _they're busy_. This means if there is a way to communicate your point that doesn't fit in normal prose...then _use it._
+Good documentation can lead to a creation process that's much more than just transactional writing. Think of your audience: they're busy, they are frustrated, they feel lost, _they're busy_. This means if there is a way to communicate your point quicker, more succinctly, then _use it._ Documentation doesn't have to remain dry prose, and likely shouldn't, if you want it to provide value for years or decades.
 
+- Draw a diagram
 - Include screenshots
 - Copy/paste code blocks
 - Link to videos
@@ -48,6 +48,8 @@ Documentation should appear more like creating than just transactional writing. 
 [https://mdxjs.com/getting-started/](https://mdxjs.com/getting-started/)
 
 - Tools: GitHub adds support for automatically creating a table contents directly in `README.md` files [https://twitter.com/github/status/1376636651963842562](https://twitter.com/github/status/1376636651963842562)
+
+- Tools: Draw.io has been invaluable for delivering complex ideas efficiently [Draw.io](https://app.diagrams.net/)
 
 Incorporate all of these together to create documentation that will actually be read.
 
