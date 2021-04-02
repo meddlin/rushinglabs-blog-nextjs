@@ -2,6 +2,7 @@ import Head from 'next/head';
 import Layout, { siteTitle } from '../../../../components/layout';
 import Link from 'next/link';
 import CategoryListing from '../../../../components/category-listing';
+import Date from '../../../../components/date';
 import utilStyles from '../../../../styles/utils.module.css';
 import { getCategoryPosts, getAllCategories } from '../../../../lib/posts';
 import { calculateSectionPagingInfo } from '../../../../lib/paging';
