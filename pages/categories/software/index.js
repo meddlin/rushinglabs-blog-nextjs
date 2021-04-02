@@ -38,11 +38,9 @@ export default function SoftwareSection({ posts, prevPosts, nextPosts, categorie
 
             <div className={`${utilStyles.horizontal}`}>
                 <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.categoriesSection}`}>
-                    <b>Categories</b>
-                    <CategoryListing categories={categoriesList} />
+                    <CategoryListing categories={categoriesList} active={_section_} />
                 </section>
 
-                {/* <h2>Section: {capitalizeFirstLetter(_section_)}</h2> */}
                 <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.postsSection}`}>
                     <ul className={utilStyles.list}>
                         {(posts && posts.length > 0) ? (
