@@ -1,9 +1,9 @@
 ---
 date: "2021-03-30"
-title: "Document Like You Use it"
+title: "Document Like You Mean It"
 ---
 
-_Document like you use it--**because you will**_
+_Document like you want to use it--**because you will**_
 
 <br />
 
@@ -28,7 +28,7 @@ Where did we write down [y]?—oh, that’s over here...so-and-so has a book on 
 
 Because stuff will happen.
 
-You'll find that one link, explaining _that one thing_, and it drives you to _write it down real quick_. You'll go on that 2 day debugging spree hunting a single elusive bug. Is there a proprietary language at use in your org? _Perfect._ Or did you finally gain understanding of that over-engineered monolith or the sprawling service-oriented system? _Even better._
+You'll find that one link, explaining _that one thing_, and it drives you to _write it down real quick_. You'll go on that two day debugging spree hunting a single elusive bug. Is there a proprietary language at use in your org? _Perfect._ Or did you finally gain understanding of that over-engineered monolith or the sprawling service-oriented system? _Even better._
 
 Each of these situations still don't cover the dozens of cases of "logic creep". Those pesky areas where business logic causes software design to take the strangest turns. And the mud stays because the domain doesn't change.
 
@@ -38,25 +38,32 @@ You have to just make notes and know.
 
 ## Dynamic Documentation
 
-Documentation should appear more like creating than transactional writing. Think of your audience: they're busy, they are frustrated, they feel lost, _they're busy_.
+Documentation should appear more like creating than just transactional writing. Think of your audience: they're busy, they are frustrated, they feel lost, _they're busy_. This means if there is a way to communicate your point that doesn't fit in normal prose...then _use it._
+
+- Include screenshots
+- Copy/paste code blocks
+- Link to videos
 
 - Tools: Make use of things like MDX
+[https://mdxjs.com/getting-started/](https://mdxjs.com/getting-started/)
+
 - Tools: GitHub adds support for automatically creating a table contents directly in `README.md` files [https://twitter.com/github/status/1376636651963842562](https://twitter.com/github/status/1376636651963842562)
 
-- Practices: Incorporate 
+Incorporate all of these together to create documentation that will actually be read.
 
 ## Re-use your tools
 
 - Practice of decorating comments with `TODO : ` a "commenting convention" (okay, bad name)
 
-- This could also fall in line with a broader suggestion for following 
+- This could also fall in line with a broader suggestion for following design principles: clear design -> clear communication -> makes for clear documentation
 
 ## Search is a lifeline
 
 You will need search. It's inevitable. Treat it like a mandatory feature.
 
-Stopping to think about the basics, this point can start to seem redundant or almost self-explanatory. You're going to document
+Stopping to think about the basics, this point can seem redundant or almost self-explanatory: as you document, your documents will grow, things get hard to find. However, the pain associated with this almost never seems self-explanatory.
 
+<img src="https://meddlin-web.s3.us-east-2.amazonaws.com/post_document-like-its-your-job/maksym-kaharlytskyi-small-unsplash.jpg" />
 
 ## Make it quick
 
@@ -76,3 +83,13 @@ If your documentation is used by your team(s), incredible value will find its wa
 _From ["Code as Documentation"](https://martinfowler.com/bliki/CodeAsDocumentation.html) - Martin Fowler_
 
 _It will become a water well your team can return to._
+
+
+
+### Credits
+
+- wall of drawers: Photo by <a href="https://unsplash.com/@jankolar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jan Antonin Kolar</a> on <a href="https://unsplash.com/s/photos/file-cabinet?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+
+
+- open file drawer: Photo by <a href="https://unsplash.com/@qwitka?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maksym Kaharlytskyi</a> on <a href="https://unsplash.com/s/photos/file-cabinet?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+  
