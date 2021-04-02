@@ -1,7 +1,10 @@
-import Layout from '../../../../components/layout';
+import Head from 'next/head';
+import Layout, { siteTitle } from '../../../../components/layout';
+import CategoryListing from '../../../../components/category-listing';
+import Date from '../../../../components/date';
 import Link from 'next/link';
 import utilStyles from '../../../../styles/utils.module.css';
-import { getCategoryPosts } from '../../../../lib/posts';
+import { getCategoryPosts, getAllCategories } from '../../../../lib/posts';
 import { calculateSectionPagingInfo } from '../../../../lib/paging';
 import config from '../../../../blogConfig';
 
@@ -13,6 +16,7 @@ const _section_ = 'software';
  */
 export async function getStaticProps({ params }) {
     const posts = getCategoryPosts(_section_);
+    const categoriesList = getAllCategories();
 
     const pageIndex = parseInt(params.page) - 1;
     const startIndex = pageIndex * config.postsPerPage;
@@ -24,6 +28,7 @@ export async function getStaticProps({ params }) {
 
     return {
         props: {
+            categoriesList,
             posts: posts.slice(startIndex, endIndex),
             prevPosts,
             nextPosts,
@@ -50,38 +55,49 @@ export async function getStaticPaths() {
 };
 
 
-const CpatCategory = ({ posts, prevPosts, nextPosts }) => {
+const SoftwareSectionPage = ({ categoriesList, posts, prevPosts, nextPosts }) => {
     return (
         <Layout>
-            <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
-                <h2 className={utilStyles.headingLg}>Blog</h2>
-                <ul className={utilStyles.list}>
-                    {posts.map( ({ id, year, date, title }) => (
-                        <li className={utilStyles.listItem} key={id}>
-                            <Link href={`/blog/${year}/${id}`}>
-                                <a>{title}</a>
-                            </Link>
-                            <br />
-                            <small className={utilStyles.lightText}>
-                                <Date dateString={date} />
-                            </small>
-                        </li>
-                    ))}
-                </ul>
+            <Head>
+				<title>{siteTitle} - {_section_}</title>
+			</Head>
 
-                {prevPosts !== null && (
-                    <Link href={`/categories/${_section_}/pages/${prevPosts}`} passHref>
-                        <a>« see newer posts</a>
-                    </Link>
-                )}
-                {nextPosts !== null && (
-                    <Link href={`/categories/${_section_}/pages/${nextPosts}`} passHref>
-                    <a>see older posts »</a>
-                    </Link>
-                )}
-            </section>
+            <div className={`${utilStyles.horizontal}`}>
+                <section className={`${utilStyles.headingMd} ${utilStyles.padding1px} ${utilStyles.categoriesSection}`}>
+                    <CategoryListing categories={categoriesList} active={_section_} />
+                </section>
+
+                <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
+                    <ul className={utilStyles.list}>
+                        {posts.map( ({ id, year, date, title }) => (
+                            <li className={utilStyles.listItem} key={id}>
+                                <Link href={`/blog/${year}/${id}`}>
+                                    <a>{title}</a>
+                                </Link>
+                                <br />
+                                <small className={utilStyles.lightText}>
+                                    <Date dateString={date} />
+                                </small>
+                            </li>
+                        ))}
+                    </ul>
+
+                    <section>
+                        {prevPosts !== null && (
+                            <Link href={`/categories/${_section_}/pages/${prevPosts}`} passHref>
+                                <a>« see newer posts</a>
+                            </Link>
+                        )}
+                        {nextPosts !== null && (
+                            <Link href={`/categories/${_section_}/pages/${nextPosts}`} passHref>
+                            <a>see older posts »</a>
+                            </Link>
+                        )}
+                    </section>
+                </section>
+            </div>
         </Layout>
     );
 };
 
-export default CpatCategory;
+export default SoftwareSectionPage;
