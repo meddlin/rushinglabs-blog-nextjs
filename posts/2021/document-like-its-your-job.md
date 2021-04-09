@@ -9,11 +9,16 @@ When I started working as a software engineer, documentation was the first major
 
 We seemed focused on keeping systems running, but we continued to not look within our own expertise for answers to the problems we faced every week.
 
-The response from team leaders was: _“We can have so much documentation we drown”_. The common retort was, _“...but we write so little we starve.”_ This same problem continued to pop up, at other organization too, albeit with a different look each time.
+The response from team leaders was: _“We can have so much documentation we drown”_. The common retort was, _“...but we write so little we starve.”_ This same problem continued to pop up, at other organizations too, albeit with a different look each time.
+
+<img src="https://meddlin-web.s3.us-east-2.amazonaws.com/post_document-like-its-your-job/jonathan-borba-small-unsplash.jpg" />
+
+> _Photo credit: <a href="https://unsplash.com/@jonathanborba?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jonathan Borba on Unsplash</a>_
 
 I fully realize documentation isn't a problem most people want to work on. I've even had some seasoned developers try to convince me they needn't pay attention because "_their code was their documentation_". There are dozens of activities we all perform to keep life moving along smoothly that we don't look forward to. But we do them anyway--not because we're secret masochists--but because the pain of not carrying out such activities urges us to.
 
 Here are a few ideas for how I try to make this one bitter activity a little more fruitful.
+
 
 ## Why Document?
 
@@ -40,16 +45,21 @@ Writing documentation can incorporate a creation process that's much more than s
 - Draw a diagram
 - Include screenshots
 - Copy/paste code blocks
+
+```bash
+user:/$ cat "like this"
+```
+
 - Link to videos
+- Make use of things like [MDX](https://mdxjs.com/getting-started/)
+- GitHub adds support for automatically creating a [table contents directly in `README.md`](https://twitter.com/github/status/1376636651963842562) files
+- [Draw.io](https://app.diagrams.net/) has been invaluable for delivering complex ideas efficiently
 
-- Tools: Make use of things like MDX
-[https://mdxjs.com/getting-started/](https://mdxjs.com/getting-started/)
+<img src="https://meddlin-web.s3.us-east-2.amazonaws.com/post_document-like-its-your-job/github-readme-toc.gif" />
 
-- Tools: GitHub adds support for automatically creating a table contents directly in `README.md` files [https://twitter.com/github/status/1376636651963842562](https://twitter.com/github/status/1376636651963842562)
+> _Credit: [GitHub table of contents announcement on Twitter](https://twitter.com/github/status/1376636651963842562)_
 
-- Tools: Draw.io has been invaluable for delivering complex ideas efficiently [Draw.io](https://app.diagrams.net/)
-
-Keep in mind, each tool has a place and they come with their own drawbacks too. For example, if you're going to take the time to diagram a system or process it's wise to make sure this isn't something that will change quickly. Just because a tool has a particular draw back doesn't mean it shouldn't be used though.
+Keep in mind, each tool has a place and they comes with its own drawbacks too. For example, if you're going to take the time to diagram a system or process it's wise to make sure this isn't something that will change quickly. Just because a tool has a particular draw back doesn't mean it shouldn't be used though.
 
 Incorporate all of these together to create documentation that will actually be read.
 
@@ -83,18 +93,35 @@ A broader case can be made for creating standardized documentation (and awarenes
 
 You will need search. It's inevitable. Treat it like a mandatory feature.
 
-Stopping to think about the basics, this point can seem redundant or almost self-explanatory: as you document, your documents will grow, things get hard to find. However, the pain associated with this almost never seems self-explanatory.
+Stopping to think about the basics, this point can seem redundant or almost self-explanatory: documenting more, leads to more noise, more to manage, and things get hard to find. Even with that, the pain from this cause-effect chain almost never seems to be self-explanatory.
+
+Looking for a specific document turns into looking looking for a whole category of documents. Later a means to search across the _text inside a document_ makes sense. Or, searching across image captions. Or, searching across document metadata, such as modification dates, authors, etc.
+
+Take time to really consider the search capabilities of the system you're using. If it's enough, _great!_ But if it's not, let that be a red flag that some consideration needs to happen. Search isn't some quick-hit feature that is easy to fix once what is in place is inadequate. Let it be a marker that the current solution, whether it be a product, service, etc., may need to be reconfigured or replaced.
 
 <img src="https://meddlin-web.s3.us-east-2.amazonaws.com/post_document-like-its-your-job/maksym-kaharlytskyi-small-unsplash.jpg" />
 
-Think: search is now a major function of desktop OS's. Android and iOS both now have an app drawer-like functionality to search for apps. Same for cloud file storage, social networks, etc.
+> _Photo credit: <a href="https://unsplash.com/@qwitka?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maksym Kaharlytskyi on Unsplash</a>_
 
 ## Make it quick
 
-Documenting something--_anything_--should be a quick process. As pain free as possible. Think of how e-commerce sites attempt to remove friction from their design--it leads to completed sales. Documentation tools should follow a similar rule.
+_**More work? Who has time for this burden?**_
 
-With the exception that incorporating more dynamic pieces in your documentation will increase authoring time
+You don't have time not to do it.
 
+That may sound alarmist...and while it's true, documenting can be time-consuming on a daily basis...over time it pays off, and saves time.
+
+Documenting should be a quick process, in the most common regards. Also, as pain free as possible. Think of how e-commerce sites attempt to remove friction from their design--it leads to completed sales. Documentation tools should follow a similar rule. Less friction to start writing leads to more "completed documents". Save time where you can. Provide justification (i.e. value) for the time-consuming areas.
+
+This is perhaps the most important reason I've switched to writing in Markdown almost entirely. Initially, learning another markup language just for the sake of writing notes felt like overkill, but it came quicker than expected. Then I discovered that a "portable", text-based format was a bigger efficiency gain than I expected. I could write, format as I needed if necessary, and easily get out...because everything was contained in a single file.
+
+The point? Look for efficiencies to be made as close to the writing process as possible. I see this as a huge problem when teams are left with their only options being massive data stores, like Sharepoint or Confluent. These systems do impressive things in their own right, but they are not frictionless nor easily adaptable.
+
+If writing a note (and finding it) wasn't so painful, it may get done more often.
+
+<img src="https://meddlin-web.s3.us-east-2.amazonaws.com/post_document-like-its-your-job/martin-adams-small-unsplash.jpg" />
+
+> _Photo credit: <a href="https://unsplash.com/@martinadams?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Martin Adams on Unsplash</a>_
 
 ## Lasting thoughts?
 
@@ -102,22 +129,8 @@ Documenting isn't simply writing down the technical minutiae of the job. It's a 
 
 It's imperative we treat it as such.
 
-Money and time is hemorrhaged for massive, enterprise CMS systems (i.e. Sharepoint, Confluence), and even more so on integrations to other business systems (looking at you...JIRA, Slack, Azure DevOps). All of this working together is great. But they don't make up for a lack of documentation; their value is diminished.
+Money and time is hemorrhaged for massive, enterprise CMS systems (i.e. Sharepoint, Confluence), and even more so on integrations to other business systems (looking at you...JIRA, Slack, Azure DevOps). But when these systems aren't leveraged together with the smaller solutions (i.e. README files, writing conventions) their value is greatly diminished.
 
-If your documentation is used by your team(s), incredible value will find its way onto the pages. The first step may be to start with the literal source code written.
+If your documentation is used by your team(s), incredible value will find its way onto the pages. To encourage writing, remove the tooling pain. To encourage reading, add value and variety. To encourage upkeep, consider how it is searched and used.
 
-> "Such a principle is not saying that code is the only documentation. Although I've often heard this said of Extreme Programming - I've never heard the leaders of the Extreme Programming movement say this. Usually there is a need for further documentation to act as a supplement to the code."
-
-_From ["Code as Documentation"](https://martinfowler.com/bliki/CodeAsDocumentation.html) - Martin Fowler_
-
-_It will become a water well your team can return to._
-
-
-
-### Credits
-
-- wall of drawers: Photo by <a href="https://unsplash.com/@jankolar?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Jan Antonin Kolar</a> on <a href="https://unsplash.com/s/photos/file-cabinet?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-
-
-- open file drawer: Photo by <a href="https://unsplash.com/@qwitka?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Maksym Kaharlytskyi</a> on <a href="https://unsplash.com/s/photos/file-cabinet?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
-  
+Documentation is an investment towards productivity.
