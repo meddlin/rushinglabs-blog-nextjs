@@ -19,12 +19,12 @@
 * keeps the article content from overflowing the margins
 * (especially when very wide, code snippets are being converted into <pre> blocks in Markdown)
 */
-.container article {
+/* .container article {
     max-width: 100%;
-}
+} */
 
 .header {
-    background-color: #484848;;
+    background-color: #484848;
     color: white;
     padding: 0.5em 1em;
 

@@ -1,0 +1,32 @@
+
+@media (min-width: 1920px) {
+    .content {
+        max-width: 50%;
+    }
+}
+
+@media (min-width: 1300px) and (max-width: 1919px) {
+    .content {
+        width: 55%;
+    }
+}
+
+@media (min-width: 700px) and (max-width: 1299px),
+    screen and (orientation: portrait) {
+    .content {
+        width: 65%;
+    }
+}
+
+@media (min-width: 400px) and (max-width: 699px), 
+    screen and (orientation: portrait) {
+    .content {
+        width: 85%;
+    }
+}
+
+@media (max-width: 399px) {
+    .content {
+        width: 100%;
+    }
+}

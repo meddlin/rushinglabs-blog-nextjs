@@ -3,6 +3,7 @@ import Head from 'next/head';
 import Date from '../../../components/date';
 import { getAllPostIds, getPostData } from '../../../lib/posts'; //  '../../../../lib/posts';
 import utilStyles from '../../../styles/utils.module.css';
+import postStyles from '../../../styles/post.module.css';
 
 /**
  * getStaticPaths is required by Next.js
@@ -43,9 +44,9 @@ export default function Post({ postData }) {
         <Layout>
             <Head>
                 <title>{postData.title}</title>
-                
             </Head>
-            <article>
+            
+            <article className={postStyles.content}>
                 <h1 className={utilStyles.headingX1}>{postData.title}</h1>
                 <Date dateString={postData.date} />
                 <div dangerouslySetInnerHTML={{ __html: postData.contentHtml }} />
