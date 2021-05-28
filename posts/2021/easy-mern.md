@@ -278,16 +278,108 @@ Now back in our main `package.json` (location: `easy-mern\package.json`), we can
     "dev": "concurrently --kill-others \"npm run server\" \"npm run start\" \"npm run db\"",
     "server": "cd src\\server && nodemon server.js",
     "client": "cd src && npm start",
-    "db": "cd C:\\Program Files\\MongoDB\\Server\\4.4\\bin && .\\mongod --dbpath C:\\mongo-data",
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "db": "cd C:\\Program Files\\MongoDB\\Server\\4.4\\bin && .\\mongod --dbpath C:\\mongo-data"
   }
 ```
+
+**`"dev"`**
+
+This is where we use `concurrently` to run all of our scripts at once, and the `--kill-others` option will automatically kill all processes if _any one_ of them dies. Since we want to run three things (front-end, back-end, database), then we associate those behind their own npm scripts, and we pass those scripts to `concurrently`.
+
+Check `concurrently`'s Usage section for more info: [https://www.npmjs.com/package/concurrently#usage](https://www.npmjs.com/package/concurrently#usage)
+
+```json
+"dev": "concurrently --kill-others \"npm run server\" \"npm run start\" \"npm run db\"",
+```
+
+**`"server"`**
+
+_Keep in mind, our directory structure for this project!_ Here, we `cd` to our server's directory, and start the process with `nodemon`. We start the server this way because `nodemon` will monitor our server for file changes. If any are detected, it automatically restarts the server for us! :D
+
+`nodemon`, see: [https://www.npmjs.com/package/nodemon](https://www.npmjs.com/package/nodemon)
+
+```json
+"server": "cd src\\server && nodemon server.js",
+```
+
+**`"client"`**
+
+Our `client` script is pretty straightforward, but remember `create-react-app` created another `package.json` inside our `client` directory. So the `npm start` portion of this command will run the `start` script in that file--_not this one_.
+
+```json
+"client": "cd src\\client && npm start",
+```
+
+**`"db"`**
+
+Finally, we have the database script. This is mostly a copy/paste of what we created earlier by making sure we could start the database from the terminal. We've added double-backslashes for escaping. Still, we `cd` into Mongo's install directory using the full path, and join this with `&&` to run `.mongod` with the `--dbpath` option set.
+
+```json
+"db": "cd C:\\Program Files\\MongoDB\\Server\\4.4\\bin && .\\mongod --dbpath C:\\mongo-data"
+```
+<br />
+
+## All Together Now!
+
+So now, from the terminal, sitting in our `easy-mern/` directory, we should be able to issue a single command to start all three pieces of our application!
+
+```bash
+npm run dev
+```
+
+In your terminal you should see output from:
+
+- `concurrently` showing it's running the configured scripts
+- `react-scripts` reporting that React is starting
+- A few lines showing `nodemon` started the server
+- And finally, MongoDB dumps a bunch of information without config to turn down verbosity
+
+### Bonus...
+
+You may have noticed we put hard-coded, full directory paths in the `package.json` and that could be problematic when/if things change. Well, we can utilize variables in our `package.json`, but beware--this lacks some cross-platform abilities--so use with caution!
+
+Basically, npm allows variables to be accessed via the prefix, `$npm_package_*`, followed by an underscore pattern for each level of objects configured in `package.json`. For example, `$npm_package_yourvar_isNested`. _However!_, on Windows the single, leading `$` is exchanged for surrounding `%%`, like `%npm_package_yourvar_isNested%`.
+
+On a *nix-like system:
+
+```json
+/* Accessed with... */
+"scripts": {
+    "db": "cd $npm_package_config_mongodir"
+},
+/* and then defined as... */
+"config": {
+    "mongodir": "~\\my\\mongo\\location",
+    "mongodata": "~\\my\\data"
+}
+```
+
+On Windows:
+
+```json
+/* Accessed with... */
+"scripts": {
+    "db": "cd %npm_package_config_mongodir%"
+},
+/* and then defined as... */
+"config": {
+    "mongodir": "C:\\Program Files\\MongoDB\\Server\\4.4\\bin",
+    "mongodatadir": "C:\\mongo-data"
+}
+```
+
+For a more in-depth explanation, take a look at [this article](https://brianchildress.co/variables-in-package-json/) from Brian Childress, and the supporting (ever-present) [StackOverflow post](https://stackoverflow.com/questions/43705195/how-can-i-use-variables-in-package-json) explaining the environment differences.
+
+- [https://brianchildress.co/variables-in-package-json/](https://brianchildress.co/variables-in-package-json/)
+- [https://stackoverflow.com/questions/43705195/how-can-i-use-variables-in-package-json](https://stackoverflow.com/questions/43705195/how-can-i-use-variables-in-package-json)
+
+
+<br />
 
 <hr />
 
 ### Credit
 
 "Run MongoDB as a Service in Windows", Vithal Reddy - [https://medium.com/stackfame/run-mongodb-as-a-service-in-windows-b0acd3a4b712](https://medium.com/stackfame/run-mongodb-as-a-service-in-windows-b0acd3a4b712)
+
+"Variables in package.json", Brian Childress - [https://brianchildress.co/variables-in-package-json/](https://brianchildress.co/variables-in-package-json/)
