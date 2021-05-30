@@ -42,22 +42,21 @@ cd easy-mern
 npm init
 ```
 
-Then inside our new Node app, we'll create two more directories for the server and front-end.
+Then inside our new Node app, we'll create a directory for the server, and we'll hold off on the front-end for now.
 
 ```bash
 mkdir src
 cd src
-mkdir client
 mkdir server
 ```
 
 ### Install: React
 
-Let's quickly get our front-end off the ground. Still in `easy-mern`, we want to `cd` into our `/client` directory, and create our React application there.
+Let's quickly get our front-end off the ground. Still in `easy-mern`, we're going to run `npx create-react-app client`. It may seem like we need to create a folder for the React application, but doing it this way, `create-react-app` is going to create that directory for us.
 
 ```bash
 cd client
-npx create-react-app frontend
+npx create-react-app client
 ```
 
 This may seem a little weird--once this command finishes we will have a full React application, built by [`create-react-app`](https://reactjs.org/docs/create-a-new-react-app.html), inside our `client` directory. This includes it's own `package.json` and everything. 
