@@ -38,8 +38,6 @@ All of this means JavaScript still connects webpages, but is far from being just
 
 All of those other uses I mentioned require their own configurations and tooling—_however_ getting our hands dirty with just the syntax only requires the browser.
 
-See the video below for more!
-
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/7U-Ijusoyvw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
