@@ -1,24 +1,28 @@
 ---
-date: "2021-06-13"
+date: "2021-06-14"
 title: "JavaScript: An Intro - the little language that could"
 section: 'javascript'
 ---
 
 Much of the modern internet is impacted by one programming language—and it provides a level of interactivity and finesse that used to not exist—yes, **Javascript.**
 
-Now, if you're reading anything on this website, I'm sure you've heard of JavaScript before, but I think it's important we take time to know how it was created. This was by Brendan Eich, in 1995. Of course, there was also that whole saga with Netscape, and Microsoft.
+_(The irony of using "finesse" and "JavaScript" in the same sentence is not lost on me.)_
+
+<br />
+
+Now, if you're reading anything on this website, I'm sure you've heard of JavaScript before, but I think it's important we take time to know how it was created. This was the work of Brendan Eich, in 1995. Of course, there was also that whole saga with Netscape, and Microsoft going on at the same time, too.
 
 At first, Brendan was recruited with the temptation of "come do Scheme in the browser", but this never really materialized. It was a longshot, and by the time Brendan got to Netscape they had already made moves with Sun Microsystems. Due to this new relationship the executive decision was to push another new language (Java) where possible. Even though, JavaScript was never intended to be a different _type_ of Java, according to Brendan it still influenced a few mannerisms of JavaScript-and of course, inspired the naming.
 
 ## Why Create It?
 
-See it was 1995, and something called the browser war was taking off. Netscape was looking to compete with Microsoft's _brand new, groundbreaking browser_—Internet Explorer. (Side note: this wasn't a complete "underdog fight" though, [Microsoft tried-and failed-to buy Netscape in 1994](https://www.neowin.net/news/microsoft-tried-and-failed-to-buy-netscape-in-1994/). Before all of this went down with Mr. Eich.)
+In short, the browser war was taking off. Netscape was looking to compete with Microsoft's _brand new, groundbreaking browser_—Internet Explorer. (Side note: This wasn't a complete "underdog fight" though, [Microsoft tried-and failed-to buy Netscape in 1994](https://www.neowin.net/news/microsoft-tried-and-failed-to-buy-netscape-in-1994/), before all of this went down with Mr. Eich.)
 
 Netscape wanted that *killer-app feature*, and at this point the internet was mostly made up of "webpages"—like literal pages. HTML was pretty much the only established "language" for the web, and CSS was beginning its own journey at roughly the same time.
 
 So, there was already a recognized need for a "glue-like" language for designers and developers to pull this functionality together, and build something better for the web.
 
-Netscape needed something and needed it quick—so, they recruited Brendan, told him something about Scheme (which is another story), and set him to work—and work he did because **he created this thing in 10 days!**
+Netscape needed something and needed it quick—so, they recruited Brendan, told him something about  [Scheme](https://en.wikipedia.org/wiki/Scheme_(programming_language)) (which is another story), and he set to work—and work he did because **he created this thing in 10 days!**
 
 Yes, Brendan Eich created JavaScript—_the glue language for the internet_—in 10 days.
 
